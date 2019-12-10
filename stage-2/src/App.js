@@ -27,12 +27,13 @@ class App extends Component {
       });
   }
   addToCart(item) {
+    console.log(item)
     this.setState({
-      cart: item
+      cart: [...this.state.cart, item]
     });
   }
   removeFromCart(index) {
-    let cartCopy = this.state.products.slice();
+    let cartCopy = this.state.cart.slice();
     cartCopy.splice(index, 1);
     this.setState({
       cart: cartCopy
